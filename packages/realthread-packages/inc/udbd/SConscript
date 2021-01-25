@@ -1,0 +1,23 @@
+from building import *
+
+cwd  = GetCurrentDir()
+path = [cwd]
+
+src = []
+
+if GetDepend(['PKG_USING_FAL']):
+    src = []
+
+if GetDepend(['RT_USING_DFS']):
+    src = []
+
+if GetDepend(['RT_USING_FINSH']):
+    src = []
+
+if GetDepend(['PKG_USING_PERSIMMON_SRC']):
+    src = []
+
+group = DefineGroup('udbd', src, depend = ['PKG_USING_UDBD'], CPPPATH = path)
+
+
+Return('group')

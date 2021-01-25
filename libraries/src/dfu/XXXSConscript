@@ -1,0 +1,18 @@
+import rtconfig
+Import('RTT_ROOT')
+from building import *
+
+# get current directory
+cwd = GetCurrentDir()
+
+src = Split("""
+dfu_application.c
+dfu_main.c
+dfu_task.c
+""")
+
+path = [cwd,]
+
+group = DefineGroup('dfu_task', src, depend = [''], CPPPATH = path)
+
+Return('group')

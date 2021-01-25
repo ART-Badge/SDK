@@ -1,0 +1,11 @@
+menu "PersimWear JS Framework"
+
+source "$JSFW_DIR/base/cfgm/Kconfig"
+source "$JSFW_DIR/base/dcm/Kconfig"
+source "$JSFW_DIR/base/emq/Kconfig"
+source "$JSFW_DIR/module/storage/Kconfig"
+source "$JSFW_DIR/module/notification/Kconfig"
+source "$JSFW_DIR/module/hardware/Kconfig"
+source "$JSFW_DIR/module/sensor/Kconfig"
+source "$JSFW_DIR/module/alarm/Kconfig"
+endmenu

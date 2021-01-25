@@ -1,0 +1,15 @@
+# RT-Thread building script for Persimmon
+
+import os
+from building import *
+
+cwd = GetCurrentDir()
+src = []
+CPPPATH = [ cwd + '/include']
+
+
+objs = DefineGroup('Persimmon', src, depend = ['PKG_PERSIMMON_USING_LOCAL'], CPPPATH = CPPPATH)
+
+
+
+Return('objs')

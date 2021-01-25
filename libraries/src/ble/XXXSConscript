@@ -1,0 +1,32 @@
+import rtconfig
+Import('RTT_ROOT')
+from building import *
+
+# get current directory
+cwd = GetCurrentDir()
+
+src = Split("""
+profile/server/bas.c
+profile/server/dis.c
+profile/server/ota_service.c
+profile/server/dfu_service.c
+profile/client/ancs_client.c
+profile/client/ams_client.c
+profile/server/simple_ble_service.c
+""")
+
+if GetDepend(['BSP_USING_BLE']):
+    src +=  Split("""
+	profile/server/bas.c
+	profile/server/dis.c
+    profile/server/ota_service.c
+    profile/server/dfu_service.c
+    profile/server/simple_ble_service.c
+	""")
+	
+CPPPATH = [cwd,
+           cwd + '/privacy']
+
+group = DefineGroup('realtek_ble', src, depend = [''], CPPPATH = CPPPATH)
+
+Return('group')

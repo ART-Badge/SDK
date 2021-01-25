@@ -1,0 +1,21 @@
+Import('rtconfig')
+from building import *
+
+cwd = GetCurrentDir()
+src = Split("""
+""")
+path = [cwd + '/upperstack_img/upperstack_0_0']
+libs = ['']
+libpath = [cwd]
+
+libs += Split('''
+ROM
+upperstack_img/upperstack_0_0/gap_utils
+sbee2_sdk
+''')
+	
+CPPDEFINES = ['SUPPORT_ALONE_UPPERSTACK_IMG']
+group = DefineGroup('RTK_LIB', src, depend = [''], CPPPATH = path, LIBS = libs, LIBPATH = libpath, CPPDEFINES = CPPDEFINES)
+
+Return('group')
+

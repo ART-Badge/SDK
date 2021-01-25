@@ -1,0 +1,5 @@
+menuconfig JSFW_USING_STORAGE
+    bool "STORAGE: storage for JS framework layer"
+    select PKG_USING_DCM
+    select DCM_USING_STORAGE
+    default n

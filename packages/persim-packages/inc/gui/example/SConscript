@@ -1,0 +1,13 @@
+# RT-Thread building script for GuiEngine demo
+
+from building import *
+
+cwd = GetCurrentDir()
+src = []
+CPPPATH = [cwd]
+
+
+group = DefineGroup('gui_demo', src, depend = ['GUIENGINE_USING_DEMO'], CPPPATH = CPPPATH)
+
+
+Return('group')

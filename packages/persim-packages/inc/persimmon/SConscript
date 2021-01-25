@@ -1,0 +1,29 @@
+# RT-Thread building script for Persimmon
+
+import os
+from building import *
+
+cwd = GetCurrentDir()
+src = []
+src = []
+src = []
+CPPPATH = [ cwd + '/include']
+
+CPPPATH += [ cwd + '/widgets/QRCode']
+
+CPPPATH += [ cwd + '/widgets/BarCode']
+
+
+objs = DefineGroup('Persimmon', src, depend = ['PKG_USING_PERSIMMON_SRC'], CPPPATH = CPPPATH)
+
+list = os.listdir(cwd)
+
+
+
+if GetDepend('PKG_USING_PERSIMMON_SRC'):
+    for d in list:
+        path = os.path.join(cwd, d)
+        if os.path.isfile(os.path.join(path, 'SConscript')):
+            objs = objs + SConscript(os.path.join(d, 'SConscript'))
+
+Return('objs')

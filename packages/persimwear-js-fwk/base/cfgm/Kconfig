@@ -1,0 +1,4 @@
+menuconfig JSFW_USING_CFGM
+    bool "CFGM: Configuration management framework layer"
+    select PKG_USING_CFGM
+    default n

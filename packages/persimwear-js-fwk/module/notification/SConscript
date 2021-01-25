@@ -1,0 +1,23 @@
+# RT-Thread building script for Persimmon
+
+import os
+from building import *
+
+cwd = GetCurrentDir()
+
+src = []
+
+# src = Split("""
+# notification.c
+# js_notification.c
+# """)
+
+# if GetDepend(['JSFW_USING_NOTIFICATION_CMD']):
+#     src += ['app_notifi_cmd.c']
+    
+CPPPATH = [ cwd + '/include']
+
+group = DefineGroup('js_framework', src, depend = ['JSFW_USING_NOTIFICATION'], CPPPATH = CPPPATH)
+
+Return('group')
+

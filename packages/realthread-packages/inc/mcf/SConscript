@@ -1,0 +1,22 @@
+from building import *
+
+cwd  = GetCurrentDir()
+path  = [cwd + '/inc']
+
+src = []
+src = []
+
+if GetDepend(['MCF_USING_SECURITY']):
+    src = []
+
+src = []
+if GetDepend(['MCF_USING_LINK_UART']):
+    src = []
+
+if GetDepend(['MCF_USING_SAMPLES']):
+    src = []
+
+group = DefineGroup('MCF', src, depend = ['PKG_USING_MCF'], CPPPATH = path)
+
+
+Return('group')

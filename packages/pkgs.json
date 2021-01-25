@@ -1,0 +1,62 @@
+[
+ {
+  "path": "/packages/iot/cJSON", 
+  "ver": "v1.0.2", 
+  "name": "CJSON"
+ }, 
+ {
+  "path": "/packages/iot/ezXML", 
+  "ver": "latest", 
+  "name": "EZXML"
+ }, 
+ {
+  "path": "/packages/language/jerryscript", 
+  "ver": "latest", 
+  "name": "JERRYSCRIPT"
+ }, 
+ {
+  "path": "/packages/tools/SystemView", 
+  "ver": "latest", 
+  "name": "SYSTEMVIEW"
+ }, 
+ {
+  "path": "/packages/system/gui_engine", 
+  "ver": "latest", 
+  "name": "GUIENGINE"
+ }, 
+ {
+  "path": "/packages/system/fal", 
+  "ver": "v0.5.0", 
+  "name": "FAL"
+ }, 
+ {
+  "path": "/packages/system/FlashDB", 
+  "ver": "v1.0.0", 
+  "name": "FLASHDB"
+ }, 
+ {
+  "path": "/packages/system/thread_pool", 
+  "ver": "latest", 
+  "name": "THREAD_POOL"
+ }, 
+ {
+  "path": "/packages/peripherals/sensors/mpu6xxx", 
+  "ver": "v1.0.0", 
+  "name": "MPU6XXX"
+ }, 
+ {
+  "path": "/packages/misc/fastlz", 
+  "ver": "v1.0.1", 
+  "name": "FASTLZ"
+ }, 
+ {
+  "path": "/packages/misc/FlexibleButton", 
+  "ver": "v1.0.0", 
+  "name": "FLEXIBLE_BUTTON"
+ }, 
+ {
+  "path": "/realthread-packages/bsal", 
+  "ver": "latest", 
+  "name": "BSAL"
+ }
+]

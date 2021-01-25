@@ -1,0 +1,18 @@
+import rtconfig
+Import('RTT_ROOT')
+from building import *
+
+# get current directory
+cwd = GetCurrentDir()
+
+src = Split("""
+""")
+
+if GetDepend(['BSP_USING_PSRAM']):
+    src += ['psram_platform.c']
+	
+
+
+group = DefineGroup('RTK_BSP', src, depend = [''], CPPPATH =[''])
+
+Return('group')

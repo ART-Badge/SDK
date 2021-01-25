@@ -1,0 +1,14 @@
+from building import *
+
+cwd  = GetCurrentDir()
+path  = [cwd + '/']
+src = []
+
+if GetDepend(['URPC_USING_SAMPLES']):
+    src = []
+    src = []
+
+group = DefineGroup('uRPC', src, depend = ['PKG_USING_URPC'], CPPPATH = path)
+
+
+Return('group')

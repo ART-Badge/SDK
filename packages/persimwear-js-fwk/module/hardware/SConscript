@@ -1,0 +1,16 @@
+Import('RTT_ROOT')
+Import('rtconfig')
+from building import *
+
+objs = []
+src = []
+cwd     = GetCurrentDir()
+list = os.listdir(cwd)
+CPPPATH = [cwd, str(Dir('#'))]
+
+# src += ['hws.c']
+# src += ['hws_port.c']
+
+group = DefineGroup('js_framework', src, depend = ['JSFW_USING_HARDWARE'], CPPPATH = CPPPATH)
+
+Return('group')

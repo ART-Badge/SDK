@@ -1,0 +1,15 @@
+Import('RTT_ROOT')
+Import('rtconfig')
+from building import *
+
+objs = []
+src = []
+cwd     = GetCurrentDir()
+list = os.listdir(cwd)
+CPPPATH = [cwd, str(Dir('#'))]
+
+# src += ['js_native.c']
+
+group = DefineGroup('js_framework_native', src, depend = [''], CPPPATH = CPPPATH)
+
+Return('group')

@@ -1,0 +1,26 @@
+import rtconfig
+Import('RTT_ROOT')
+from building import *
+
+# get current directory
+cwd = GetCurrentDir()
+src = Split("""
+""")
+CPPPATH = [cwd]
+
+if GetDepend(['BSP_USING_LCD']):
+    src += ['wristband/lcd_driver/lcd_st7789_240.c']
+    src += ['wristband/module/module_lcd_8080.c']
+
+if GetDepend(['BSP_USING_I2C']):
+    src += ['wristband/SRC/rtl876x_i2c_wristband.c']
+
+CPPPATH += [cwd,
+            cwd+'/wristband/spi_x_platform',
+            cwd+'/wristband/gui_lib/include',
+            cwd+'/wristband/lcd_driver',
+            cwd+'/wristband/inc']
+
+group = DefineGroup('RTK_BSP', src, depend = [''], CPPPATH = CPPPATH)
+
+Return('group')

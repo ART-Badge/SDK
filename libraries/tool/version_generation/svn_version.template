@@ -1,0 +1,9 @@
+#define VERSION_MAJOR            1
+#define VERSION_MINOR            1
+#define VERSION_REVISION         $WCREV$
+#define VERSION_BUILD            $WCDATE=%Y%m%d$
+#define NUM4STR(a,b,c,d)         #a "." #b "." #c "." #d
+#define VERSIONBUILDSTR(a,b,c,d) NUM4STR(a,b,c,d)
+#define VERSION_BUILD_STR        VERSIONBUILDSTR(VERSION_MAJOR,VERSION_MINOR,VERSION_REVISION,VERSION_BUILD)
+#define SRC_TIME                 "$WCDATE$"
+#define BUILDING_TIME            "$WCNOW$"

@@ -1,0 +1,23 @@
+import rtconfig
+Import('RTT_ROOT')
+from building import *
+
+# get current directory
+cwd = GetCurrentDir()
+
+src = Split("""
+""")
+
+path = [cwd,
+        cwd + '/peripheral',
+        cwd + '/platform',
+        cwd + '/app',
+		cwd + '/os']
+		
+path += [cwd + '/bluetooth/gap',
+			cwd + '/bluetooth/profile',
+			cwd + '/bluetooth/profile/server']
+
+group = DefineGroup('RTK_BSP', src, depend = [''], CPPPATH = path)
+
+Return('group')

@@ -1,0 +1,21 @@
+#define VERSION_MAJOR            MAJOR_T
+#define VERSION_MINOR            MINOR_T
+#define VERSION_REVISION         REVISION_T
+#define VERSION_BUILDNUM         BUILDNUM_T
+#define VERSION_GCID             GITCMTID_T
+#define VERSION_GCID2            GITCMTID2_T
+#define CUSTOMER_NAME            CUSTOMER_NAME_T
+#define CN_1                     'CN_1_T'
+#define CN_2                     'CN_2_T'
+#define CN_3                     'CN_3_T'
+#define CN_4                     'CN_4_T'
+#define CN_5                     'CN_5_T'
+#define CN_6                     'CN_6_T'
+#define CN_7                     'CN_7_T'
+#define CN_8                     'CN_8_T'
+#define BUILDING_TIME            BUILDTIME_T
+#define NAME2STR(a)              #a
+#define CUSTOMER_NAME_S          #NAME2STR(CUSTOMER_NAME)
+#define NUM4STR(a,b,c,d)         #a "." #b "." #c "." #d
+#define VERSIONBUILDSTR(a,b,c,d) NUM4STR(a,b,c,d)
+#define VERSION_BUILD_STR        VERSIONBUILDSTR(VERSION_MAJOR,VERSION_MINOR,VERSION_REVISION,VERSION_BUILDNUM)
