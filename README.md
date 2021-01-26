@@ -2,7 +2,7 @@
 
 #### 注意事项
 
-该 MDK工程在使用之前，需要更新一下最新系统固件：`all_bin_file\all-bin-20201217\all.bin.output\ImgPacketFile_Patch_0.0.110.13_App_1.1.1.2_WithUserData-61893c89a52064ee5efca94d84e82a35.bin`，方可正常下载和调试。固件只需更新一次即可，之后可以随意使用该 MDK 工程进行下载调试等二次开发工作。
+该 MDK 工程在使用之前，需要更新一下最新系统固件：`all_bin_file\all-bin-20201217\all.bin.output\ImgPacketFile_Patch_0.0.110.13_App_1.1.1.2_WithUserData-61893c89a52064ee5efca94d84e82a35.bin`，方可正常下载和调试。固件只需更新一次即可，之后可以随意使用该 MDK 工程进行下载调试等二次开发工作。
 
 #### 固件更新方法
 
