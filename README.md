@@ -10,6 +10,10 @@ ART-Badge 电子胸牌应用开发资料请查看 ART-Badge 专属网站：https
 
 - 请勿使用 env 工具进行 `mennuconfig` 配置工程，相关功能删减可以直接修改 `rtconfig.h` 文件，修改后可 `scons --target=mdk5` 重构工程。
 
+- 目前支持使用该 SDK 工程进行下载调试等二次开发工作的固件只有最新版本的固件 `all_bin_file\all-bin-20201217.zip`，若更新的是另外两个固件 `all-bin-20201231.zip` 和 `all-bin-20201217.zip` ，则不支持使用该 SDK 源码进行二次开发，切记。 
+
+- 工程需要添加下载算法，请把 `flashlgo` 中的两个 `.FLM` 文件拷贝到 `C:\Keil_v5\ARM\Flash` 路径下即可（根据你自己 MDK 实际安装路径拷贝）。
+
 #### 三、固件更新方法
 
 - 见 [恢复出厂固件方法](https://art-badge.github.io/website/#/docs/%E6%81%A2%E5%A4%8D%E5%87%BA%E5%8E%82%E5%9B%BA%E4%BB%B6%E6%96%B9%E6%B3%95)（点击跳转）。
