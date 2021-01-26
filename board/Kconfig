@@ -28,11 +28,6 @@ config BSP_USING_SIMULATOR_TOUCH
     bool "Enable simulator touch"
     default n
 
-config BSP_USING_HWTEST
-    bool "Enable hardware test"
-    default n
-endmenu
-
 menu "On-chip Peripheral Drivers"
     menuconfig BSP_USING_UART
         bool "Enable UART"
