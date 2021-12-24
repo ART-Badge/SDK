@@ -1,0 +1,19 @@
+
+Import("rtconfig")
+from building import *
+
+cwd = GetCurrentDir()
+src = []
+path = [cwd + "/include"]
+libs = [""]
+libpath = [cwd]
+
+group = DefineGroup(
+    "realthread_packages",
+    src,
+    depend=["PKG_USING_REALTHREAD_PACKAGES_LIB"],
+    CPPPATH=path,
+    LIBS=libs,
+    LIBPATH=libpath,
+)
+Return("group")

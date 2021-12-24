@@ -1,0 +1,1 @@
+应原厂要求，RT8762D 的数据手册及其相关工具只能自行在 RealMCU 官网注册账户后下载，链接：https://www.realmcu.com/zh/Home/DownloadList

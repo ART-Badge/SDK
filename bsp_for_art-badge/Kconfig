@@ -1,0 +1,18 @@
+mainmenu "RT-Thread Configuration"
+
+config BSP_DIR
+    string
+    default "."
+
+config RTT_DIR
+    string
+    default "./rt-thread"
+
+config PKGS_DIR
+    string
+    default "./package-indexs"
+
+
+source "$RTT_DIR/Kconfig"
+source "$PKGS_DIR/Kconfig"
+source "board/Kconfig"

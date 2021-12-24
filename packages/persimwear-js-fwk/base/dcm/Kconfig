@@ -1,4 +1,0 @@
-menuconfig JSFW_USING_DCM
-    bool "DCM: Data Cache Management framework layer"
-    select PKG_USING_DCM
-    default n

@@ -1,0 +1,22 @@
+import rtconfig
+from building import *
+
+cwd     = GetCurrentDir()
+
+src     = Split("""
+player/player.c
+decode/decode.c
+beep/beep.c
+""")
+
+if GetDepend(['BSP_USING_BEEP']):
+    src += ['ringtones.c']
+
+CPPPATH = [cwd,
+           cwd+'/player',
+           cwd+'/decode',
+           cwd+'/beep']
+
+group = DefineGroup('beep', src, depend = ['BSP_USING_BEEP'], CPPPATH = CPPPATH)
+
+Return('group')

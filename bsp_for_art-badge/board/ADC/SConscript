@@ -1,0 +1,17 @@
+import rtconfig
+from building import *
+
+cwd = GetCurrentDir()
+
+src = Split("""
+io_adc.c
+""")
+
+if GetDepend(['BSP_USING_ADC']):
+    src += ['io_adc.c']
+
+CPPPATH = [cwd]
+
+group = DefineGroup('ADC', src, depend=['BSP_USING_ADC'], CPPPATH=CPPPATH)
+
+Return('group')
