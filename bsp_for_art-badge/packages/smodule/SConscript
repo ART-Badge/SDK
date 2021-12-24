@@ -1,0 +1,24 @@
+
+Import("rtconfig")
+from building import *
+
+cwd = GetCurrentDir()
+src = []
+path = [cwd]
+libs = [""]
+libpath = [cwd + "/lib"]
+
+if rtconfig.CROSS_TOOL == "gcc":
+    libs += ["smodule_gcc"]
+else:
+    libs += ["smodule"]
+
+group = DefineGroup(
+    "smodule",
+    src,
+    depend=[""],
+    CPPPATH=path,
+    LIBS=libs,
+    LIBPATH=libpath,
+)
+Return("group")

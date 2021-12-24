@@ -1,0 +1,57 @@
+Import('RTT_ROOT')
+Import('rtconfig')
+import os
+from building import *
+
+cwd = GetCurrentDir()
+list = os.listdir(cwd)
+
+# add the general drivers.
+src = Split("""
+board.c
+osif_for_rtl876x.c
+""")
+
+if GetDepend(['RT_USING_SERIAL']):
+    src += ['drv_usart.c']
+
+if GetDepend(['BSP_USING_PSRAM']):
+    src += ['drv_psram.c']
+
+if GetDepend(['BSP_USING_LCD']):
+    src += ['drv_lcd_8080.c']
+
+if GetDepend(['BSP_USING_REALTEK_BLE']):
+    src += ['drv_ble.c']
+
+if GetDepend(['BSP_USING_PIN']):
+    src += ['drv_gpio.c']
+
+if GetDepend(['BSP_USING_I2C']):
+    src += ['drv_i2c.c']
+
+
+if GetDepend(['BSP_USING_TOUCHPAD']):
+    src += ['drv_touchpad.c']
+
+if GetDepend(['BSP_USING_SIMULATOR_TOUCH']):
+    src += ['simulator_touch.c']
+    
+if GetDepend(['BSP_USING_FLASH']):
+    src += ['drv_flash.c']
+
+if GetDepend(['BSP_USING_PWM']):
+    src += ['drv_pwm.c']
+CPPPATH = [cwd,
+           cwd+'/link_scripts',
+           cwd+'/persim_port',
+           cwd+'/mplayer',]
+
+group = DefineGroup('Drivers', src, depend = [''], CPPPATH = CPPPATH)
+
+for d in list:
+    path = os.path.join(cwd, d)
+    if os.path.isfile(os.path.join(path, 'SConscript')):
+        group = group + SConscript(os.path.join(d, 'SConscript'))
+
+Return('group')

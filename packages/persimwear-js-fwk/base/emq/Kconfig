@@ -1,4 +1,0 @@
-menuconfig JSFW_USING_EMQ
-    bool "EMQ: Enhance Message Queue framework layer"
-    select PKG_USING_EMQ
-    default n
